@@ -154,10 +154,13 @@ exports.deleteCompetitor=(req,res)=>{
 }
 
 exports.viewLogs=(req,res)=>{
-	const query_string = 'SELECT DATE_FORMAT(log_timestamp,"%b %e %Y %r") Date, timestampdiff(minute,log_timestamp,now())Minutes,timestampdiff(hour,log_timestamp,now())Hour,(now()) Time,message from logs where user_id = ? ';
+	const query_string = 'SELECT DATE_FORMAT(log_timestamp,"%b %e %Y %r") Date, timestampdiff(hour,log_timestamp,now()) Hour, timestampdiff(minute,log_timestamp,now()) Minutes, timestampdiff(second,log_timestamp,now()) Seconds, (now()) Time, message from logs where user_id = ? order by log_timestamp, message desc';
 	const req_data = [req.params.user_id]
 	connection.query(query_string, req_data, (err,result) =>{
 		if(!err){
+			result.sort(function(a, b){
+				return new Date(b.Date) - new Date(a.Date);
+			});
 			res.status(200).send(result);
 		}
 		else{
