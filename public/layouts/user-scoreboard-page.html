@@ -1,0 +1,91 @@
+<div class="ui grid">
+    <div class="five wide column"></div>
+    <div class="six wide column">
+        <div class=" fluid ui floating dropdown labeled search icon button">
+            <i class="search icon"></i>
+            <span class="text">Select Event &nbsp;</span>
+            <div class="menu">
+                <div class="item" id="cas">cas</div>
+                <div class="item" id="palicsihan">PalICSihan</div>
+                <div class="item" id="palaronguplb">Palarong UPLB</div>
+            </div>
+        </div>
+    </div>
+    <div class="five wide column"></div>
+</div> <br><br>
+
+
+<div class="ui row card">
+
+    <div class="ui centered grid" ng-controller="userGameSchedController as UGSC" ng-repeat="x in UGSC.allSports" ng-init="a=x.sport_id">
+
+        <div class="center aligned twelve wide column">
+            <h1 class="centered" class="sportsname"> {{x.sport_name}} </h1>
+
+            <table id="maintable" class="ui selectable celled table">
+                <thead>
+                    <tr>
+                        <th> Date </th>
+                        <th> Start Time </th>
+                        <th> End Time </th>
+                        <th> Venue </th>
+                        <th> Referee </th>
+                        <th> Team1 </th>
+                        <th> Team2 </th>
+                        <th> Score </th>
+                    </tr>
+                </thead>
+
+
+                <tbody ng-init="UGSC.viewGamesLeaderboards(x)">
+
+                    <a href="">
+                        <tr ng-repeat="y in UGSC.allGames[a-1] track by $index" ng-click="UGSC.viewGame(y.game_id)">
+                            <td id="date"> {{y.date_start|date : 'yyyy-mm-dd'}} </td>
+                            <td id="starttime"> {{y.date_start|date : 'yyyy-mm-dd'}} </td>
+                            <td id="endtime"> {{y.date_start|date : 'yyyy-mm-dd'}} </td>
+                            <td id="venue"> {{y.venue_name}} </td>
+                            <td id="referee"> {{y.referee}} </td>
+                            <td id="teamname"> {{y.team_name}}</td>
+                            <td id="teamname"> {{y.team_name_2}} </td>
+                            <td id="score" ng-init="UGSC.getScores(y);UGSC.getScores2(y);b=y.game_id"> {{UGSC.allScores[b]}}-{{UGSC.allScores2[b]}} </td>
+                        </tr>
+                    </a>
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div class="center aligned four wide column" ng-init="UGSC.getRanking(x)">
+            <table class="ui very basic collapsing celled fluid table">
+                <thead>
+                    <h4 class="centered">Standings</h4>
+                    <tr>
+                        <th> Team </th>
+                        <th> Win </th>
+                        <th> Loss </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="y in UGSC.rankList">
+                        <td>
+                            <h4 class="ui image header">
+                                <img src="images/cas.jpg" class="ui mini rounded image">
+                                <div class="content">
+                                    <div class="sub header" id="teamname"> {{y.team_name}} </div>
+                                </div>
+                            </h4>
+                        </td>
+                        <td id="win"> {{y.win}} </td>
+                        <td id="loss"> {{y.loss}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+</div>
+</div>

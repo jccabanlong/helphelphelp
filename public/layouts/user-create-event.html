@@ -1,0 +1,35 @@
+<<<<<<< HEAD
+<div ui-container>
+<form class="ui form">
+  <div class="field">
+    <label>Event Name</label>
+    <input name="event-name" placeholder="Palarong UPLB" type="text" required>
+  </div>
+  <div class="field">
+      <label>Start Date</label>
+      <input name="date-start" type="date" required>
+  </div>
+  <div class="field">
+      <label>End Date</label>
+      <input name="date-end" type="date" required>
+  </div>
+  <button class="ui button" type="submit">Submit</button>
+=======
+<div ui-container ng-controller = "eventController as event">
+<form class="ui form">
+  <div class="field">
+    <label>Event Name</label>
+    <input name="event-name" ng-model = "event.eventName" placeholder="Palarong UPLB" type="text" required>
+  </div>
+  <div class="field">
+      <label>Start Date</label>
+      <input name="date-start" ng-model = "event.dateStart" type="date" required>
+  </div>
+  <div class="field">
+      <label>End Date</label>
+      <input name="date-end" ng-model = "event.eventName" type="date" required>
+  </div>
+  <button class="ui button" ng-click = "event.addEvent()" type="submit">Submit</button>
+>>>>>>> 2a934dd20ee65369bb0142e7b8be2f77da403340
+</form>
+</div>

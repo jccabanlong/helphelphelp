@@ -1,0 +1,126 @@
+<div class="ui grid">
+
+    <!-- left padding -->
+    <div class="five wide column">
+    </div>
+
+    <div class="six wide column">
+        <div class=" fluid ui floating dropdown labeled search icon button">
+            <i class="search icon"></i>
+            <span class="text">Select Event</span>
+            <div class="menu">
+                <div class="item" id="palacasan">PalaCASan</div>
+                <div class="item" id="palicsihan">PalICSihan</div>
+                <div class="item" id="palaronguplb">Palarong UPLB</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- left padding -->
+    <div class="five wide column">
+    </div>
+
+</div>
+
+<br>
+
+<h2 class="ui horizontal divider header">
+    Game Schedules
+</h2>
+<br>
+
+<div class="ui centered grid">
+    <div class="row">
+
+        <!-- left padding -->
+        <div class="two wide column">
+        </div>
+
+        <div class="ten wide column" ng-controller="userGameSchedController as UGSC">
+            <div class="content"  ng-repeat="x in UGSC.allSports" ng-init="a=x.sport_id">
+                <table class="ui celled padded table">
+                    <br><h3 class="center aligned header" id="sportsname"> {{x.sport_name}} </h3>   
+                    <tbody ng-init="UGSC.viewGames(x)">
+                        <thead class="single line">
+                            <tr>
+                                <th> Date/Time </th>
+                                <!-- <th> Time </th> -->
+                                <th> Venue </th>
+                                <th> Team1 </th>
+                                <th> Team2 </th>
+                                <th> Referee </th>
+                            </tr>
+                        </thead>
+                        <tr ng-repeat="y in UGSC.allGames[a-1]" ng-click="UGSC.viewGame(y.game_id)">
+                            <!-- <td id="game"> {{y.game_id}} </td> -->
+                            <td id="date"> {{y.date_start|date : 'yyyy-mm-dd'}} </td>
+                            <!-- <td id="time">  </td> -->
+                            <td id="venue"> {{y.venue_name}} </td>
+                            <td id="teamname"> {{y.team_name}} </td>
+                            <td id="teamname"> {{y.team_name_2}} </td>
+                            <td id="ref"> {{y.referee}} </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br><br>
+
+            <!-- <div class="content">
+                <table class="ui celled padded table">
+                    <thead class="single line">
+                        <h3 class="center aligned header" id="sportsname"> Volleyball </h3>
+                        <tr>
+                            <th> Date </th>
+                            <th> Time </th>
+                            <th> Venue </th>
+                            <th> Team1 </th>
+                            <th> Team2 </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="date"> March 19, 2017 </td>
+                            <td id="time"> 14h00 </td>
+                            <td id="venue"> Baker Hall </td>
+                            <td id="teamname"> Team 1 </td>
+                            <td id="teamname"> Team 2 </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br><br>
+
+            <div class="content">
+                <table class="ui celled padded table">
+                    <thead class="single line">
+                        <h3 class="center aligned header" id="sportsname"> Soccer </h3>
+                        <tr>
+                            <th> Date </th>
+                            <th> Time </th>
+                            <th> Venue </th>
+                            <th> Team1 </th>
+                            <th> Team2 </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="date"> March 19, 2017 </td>
+                            <td id="time"> 14h00 </td>
+                            <td id="venue"> Baker Hall </td>
+                            <td id="teamname"> Team 1 </td>
+                            <td id="teamname"> Team 2 </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> -->
+            <br><br>
+        </div>
+
+        <!-- right padding -->
+        <div class="two wide column">
+        </div>
+
+    </div>
+</div>
+
+<!-- <script src="../../app/user-game-sched.controller.js"></script> -->

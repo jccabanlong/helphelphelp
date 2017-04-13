@@ -1,0 +1,12 @@
+#sport-wrapper {
+	/*margin-top: 85px;*/
+}
+
+#maintable th {
+	background-color: #2B2B2B;
+	color: white;
+}
+
+#maintable tr:hover {
+	background-color: #E9E581;
+}

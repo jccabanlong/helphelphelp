@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app = "mainApp">
+<head>
+    <title>128 Template</title>
+	<link rel='stylesheet prefetch' href='css/components/icon.min.css'>
+    <link rel='stylesheet' href='css/semantic.min.css'/>
+    <link rel='stylesheet' href='css/defaults.css'/>
+    <script type='text/script' src='js/jquery-3.1.1.min.js'></script>
+    <script type='text/script' src='js/semantic.min.js'></script>
+</head>
+
+<body>
+    <!-- NAVIGATION SECTION -->
+    <div class="ui fixed inverted menu" id="page-navigation" >
+        <div class="ui container">
+            <a href="#" class="header item">
+                <img class="logo" src="images/logo.jpg">
+                &nbsp;&nbsp;MALICSI
+            </a>
+            <a href="#" class="item">Home</a>
+            <a href="#" class="item">Events</a>
+            <a href="#" class="item">Home</a>
+
+                <div class="alight right ui simple dropdown item" ng-controller= "userController as user">
+           
+                {{user.username}} <i class="dropdown icon"></i>
+                <div class="menu" >
+                    <a class="item" href="#">Profile</a>
+                    <a class="item" href="#">Activity Log</a>
+                    <a class="item" href="#" ng-click="user.logOut()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- CONTENT SECTION -->
+    <div class="ui main" id="main-panel">
+        <div class="ui container">
+
+
+       		  CONTENT
+
+
+        </div>
+    </div>
+
+
+    <!-- FOOTER SECTION -->
+    <div class="ui inverted vertical footer segment" id="page-footer-1">
+        <div class="ui center aligned container">
+            <div class="ui container">
+                <i class="facebook f icon link-icon"></i>
+                <i class="github icon link-icon"></i>
+                <i class="flickr icon link-icon"></i>
+            </div>
+
+            <div class="ui horizontal inverted small divided link list">
+                <a class="item" href="#">Site Map</a>
+                <a class="item" href="#">Contact Us</a>
+                <a class="item" href="#">Terms and Conditions</a>
+                <a class="item" href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+    <div class="ui inverted vertical footer segment" id="page-footer-2">
+        <div class="ui center aligned container">
+            <div class="seven wide column">
+                <p>CMSC 128 A-1L | All Rights Reserved | 2017</p>
+            </div>
+        </div>
+    </div>
+    <script src="semantic/semantic.min.js"></script>
+    <script src="semantic/semantic.js"></script>
+    <script src="angular.js"></script>
+    <script src="app.module.js"></script>
+    <script src="angular-route.js"></script>
+    <script src="user.controller.js"></script>
+
+</body>
+</html>

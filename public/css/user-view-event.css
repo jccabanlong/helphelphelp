@@ -1,0 +1,18 @@
+div {
+    /*border: solid 1px red;*/
+}
+
+.command-btn {
+    background: #e9e581;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    border: none;
+    border-radius: 100%;
+    float: right;
+}
+
+.event-section {
+    /*border: solid 1px red;*/
+    margin-bottom: 20px;
+}

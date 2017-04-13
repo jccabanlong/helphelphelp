@@ -1,0 +1,22 @@
+#error {
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background: url("../images/patterns/3.png");
+    position: absolute;
+    text-align: center;
+}
+
+img {
+    margin-top: 50px;
+    width: 300px;
+}
+
+h1 {
+    font-weight: bolder;
+    font-size: 60pt;
+}
+
+p {
+    font-size: 15pt;
+}

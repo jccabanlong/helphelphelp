@@ -1,0 +1,26 @@
+<link rel='stylesheet' href='css/activity-log.css'/>
+
+<div id="main-wrapper" ng-controller = "activityLogController as logs">
+    <div class="ui container ">
+
+        <h2>Activity Log</h2>
+
+        <div class="ui feed vertical segment" ng-repeat = "log in logs.allLogs">
+            <div class="event">
+                <div class="label">
+                    <img src="images/id.jpg">
+                </div>
+                <div class="content">
+                    <div class="date">
+                        {{log.Time}}
+                    </div>
+                    <div class="summary">
+                        {{log.message}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+    </div>
+</div>

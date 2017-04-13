@@ -1,0 +1,14 @@
+changes:
+<<<<<<< HEAD
+* changed encryption from CryptoJS to bcrypt
+* added simple toastr for error handling
+
+bugs:
+* user firstname and lastname does not reflect on navbar when logged in
+=======
+* added simple encryption of password using CryptoJS (used AES encryption and decryption)
+* fixed register user
+
+bugs:
+* logs in even if non-existent user in database
+>>>>>>> 7543b5786efb4d4173894087fbb83cfe41b06f1d

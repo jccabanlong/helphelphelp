@@ -1,0 +1,20 @@
+<link rel='stylesheet' href='css/activity-log.css'/>
+
+<div id="main-wrapper" ng-controller = "activityLogController as user">
+  <table class = "ui celled table">
+    <thead>
+        <tr>
+            <th>Time</th>
+            <th>Logs</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat = "x in user.allLogs">
+            <td> {{ x.Time }}
+            </td>
+            <td> {{ x.message }}
+            </td>
+        </tr>
+    </tbody>
+    </table>
+</div>

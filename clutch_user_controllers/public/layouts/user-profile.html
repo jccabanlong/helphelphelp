@@ -1,0 +1,275 @@
+<script type='text/javascript' src='js/user-profile.js'></script>
+<link rel='stylesheet' href='css/profile.css'/>
+
+<div id="main-wrapper" ng-controller = "profileController as user">
+
+    <div class="ui grid container">
+        <div class="five wide column">
+            <div class="ui center aligned segment">
+                <img class="ui centered small circular image" src="images/id.jpg">
+                <h2 class ="ui centered header" id="header-section">
+                    {{user.user.firstname + " " + user.user.lastname}}
+                    <div class="sub header" id="header-section">
+                    {{user.user.location}}
+                    </div>
+                </h2>
+                <button class="ui basic button" id="updateButton">
+                    <i class="edit icon"></i>
+                    Update
+                </button>
+                
+                <div class="ui modal " id="update-modal">
+                    <div class="header">Update Profile</div>
+                        <div class="content">
+                            <form ng-controller="userController as update">
+                                <div class="ui form">
+                                    <div class="fields">
+                                        <div class="field">
+                                            <label>Username</label>
+                                            <input type="text" placeholder="{{update.user.username}}" ng-model="username">
+                                        </div>
+                                        <div class="field">
+                                            <label>Password</label>
+                                            <input type="password" ng-model="password">
+                                        </div>
+                                        <div class="field">
+                                            <label>Location</label>
+                                            <input type="text" placeholder="Country/City" ng-model="location">
+                                        </div>
+                                        <div class="field">
+                                            <label>College</label>
+                                            <input type="text" placeholder="{{update.user.college}}" ng-model="college">
+                                        </div>
+                                        <div class="field">
+                                            <label>Age</label>
+                                            <input type="text" placeholder="{{update.user.age}}" ng-model="age">
+                                        </div>
+                                        <div class="field">
+                                            <label>Height</label>
+                                            <input type="text" placeholder="{{update.user.height}}" ng-model="height">
+                                        </div>
+                                        <div class="field">
+                                            <label>Weight</label>
+                                            <input type="text" placeholder="{{update.user.weight}}" ng-model="weight">
+                                        </div>
+                                    </div>
+                                    <div class="equal width fields">
+                                        <div class="field">
+                                            <label>First name</label>
+                                            <input type="text" placeholder="{{update.user.firstname}}" ng-model="firstname">
+                                        </div>
+                                        <div class="field">
+                                            <label>Last name</label>
+                                            <input type="text" placeholder="{{update.user.lastname}}" ng-model="lastname">
+                                        </div>  
+                                    </div>
+                                    <div class="ui equal width form">
+                                        <div class="fields">
+                                            <div class="field">
+                                                <label>E-mail</label>
+                                                <input type="email" placeholder="{{update.user.email}}" ng-model="email">
+                                            </div>
+                                            <div class="field">
+                                                <label>Contact Number</label>
+                                                <input type="text" placeholder="{{update.user.contactno}}" ng-model="contactno">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label>Gender</label>
+                                        <select class="ui selection dropdown" ng-model="gender">
+                                                <option value="M">Male</option>
+                                                <option value="F">Female</option>
+                                        </select> 
+                                    </div>
+                                </div> 
+                            <div class="ui actions">
+                                <div class="ui close button" ng-click="update.closeModal('update-modal')">Cancel</div>
+                                <div class="ui button" type="submit" ng-click="update.updateUser(update.user,username,password,location,college,age,height,weight,firstname,lastname,email,contactno,gender)">Update</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!--ABOUT-->
+                <table class="ui very basic collapsing celled table">
+                <tbody>
+                    <tr>
+                        <td class="five wide column">College</td>
+                        <td> {{user.user.college}} </td>
+                    </tr>
+                    <tr>
+                        <td>Contact No.</td>
+                        <td>{{user.user.contactno}}</td>
+                    </tr>
+                    <tr>
+                        <td>E-mail</td>
+                        <td>{{user.user.email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Age</td>
+                        <td>{{user.user.age}}</td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>{{user.user.gender}}</td>
+                    </tr>
+                    <tr>
+                        <td>Weight</td>
+                        <td>{{user.user.weight}}</td>
+                    </tr>
+                    <tr>
+                        <td>Height</td>
+                        <td>{{user.user.height}}</td>
+                    </tr>
+
+                </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="eleven wide column">
+            <div class="ui grid">
+                <div class="eight wide column">
+                  <div class="ui segment">
+                     <h3 class="ui right floated header">
+                    INTERESTS
+                    </h3>
+                    <div class="ui clearing divider"></div>
+                <div class="ui very relaxed list">
+                    
+                    <div class="item" ng-repeat = "interest in user.userInterests">
+                        <div class="content">
+                            <a class="header">{{interest.interests}}
+                            <div class = "ui right floated content">
+                                 <button class="ui button" ng-click="user.deleteInterest(interest.interests)">DELETE</button></a>
+                             </div>
+                        </div>
+
+                    </div> 
+                </div>
+                <center>
+                    <button class="ui basic button" id="interest">UPDATE</button>
+                </center>
+                  </div>
+
+              <div class="ui modal" id="interest-modal">
+                    <div class="header">Sport Interests</div>
+                    <div class="content">
+                            <form ng-controller="profileController as update">
+                                <div class="ui form">
+                                    <div class="fields">
+                                        <div class="field">
+                                            <label>Add Sport</label>
+                                            <input type="text" ng-model="update.interests">
+                                        </div>
+                                    </div>
+                                </div> 
+                            <div class="ui actions">
+                                <div class="ui close button" ng-click="update.closeModal('interest-modal')">Cancel</div>
+                                <div class="ui button" type="submit" ng-click ="update.updateInterest()" >Update</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+                <div class="eight wide column">
+                  <div class="ui center aligned segment">
+                    <h3 class="ui right floated header">
+                    TEAMS
+                    </h3>
+                    <div class="ui clearing divider"></div>
+                    <div class="ui tiny images">
+                      <a class="ui image" href="">  
+                      <img src="/images/tnt.jpg">
+                      </a>
+                      <a class="ui image" href="">  
+                      <img src="/images/tnt.jpg">
+                      </a>
+                      <a class="ui image" href="">  
+                      <img src="/images/tnt.jpg">
+                      </a>
+                      <a class="ui image" href="">  
+                      <img src="/images/tnt.jpg">
+                      </a>
+                      <a class="ui image" href="">  
+                      <img src="/images/tnt.jpg">
+                      </a>
+                      <a class="ui image" href="">  
+                      <img src="/images/tnt.jpg">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="ui segment">
+                <h3 class="ui right floated header">
+                    EVENTS
+                </h3>
+                <button class="ui basic button" id="create">
+                    Create
+                </button>
+                <div class="ui clearing divider"></div>
+                
+                
+                <!--LIST OF EVENTS-->
+                <div class="ui four cards">
+                    <div class="card" ng-repeat="event in user.userEvents">
+                        <div class="content">
+                            <div class="header">{{event.event_name}}</div>
+                            <div class="description">{{event.Date}}</div>
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <!--MODAL OF CREATE EVENT-->
+                <div id ="event-modal" class="ui modal">
+                    <div class="ui segment">
+                        <form class="ui form" ng-controller = "eventController as event">
+                        <h2 class="ui dividing header">CREATE EVENT</h2>
+                        <div class="field">
+                            <label>Event Name</label>
+                            <input type="text" ng-model = "event.eventName" name="event_name">
+                        </div>
+                        <div class="fields">
+                            <div class="field">
+                                <label>Start Date</label>
+                                <div class="ui calendar" id="start-date-pick">
+                                    <div class="ui input left icon">
+                                        <i class="calendar icon"></i>
+                                        <input type="text" placeholder="Date" name="start_date" ng-model = "event.dateStart">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label>End Date</label>
+                                <div class="ui calendar" id="end-date-pick">
+                                    <div class="ui input left icon">
+                                        <i class="calendar icon"></i>
+                                        <input type="text" placeholder="Date" name="end_date" ng-model = "event.dateEnd">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="ui button event" id ="cancel-create">
+                            Cancel
+                            </button>
+                            <button class="ui button event" id ="submit-create" ng-click = "event.addEvent(logged.userId)">
+                            Submit
+                            </button>
+                            
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+
+            
+                
+                
+            </div>
+
+        </div>
+    </div>
+</div>

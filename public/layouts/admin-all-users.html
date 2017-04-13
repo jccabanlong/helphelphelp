@@ -1,0 +1,162 @@
+<link rel="stylesheet" href="css/admin.css"></link>
+<link rel="stylesheet" type="text/css" href="css/admin_homepage.css"> </link>
+<link rel="stylesheets" type='text/javascript' src='js/admin.js'></link>
+
+
+<div class="ui container" id="main-wrapper">
+    <div class="ui card" id="main_card">
+        <div class="content">
+            <div class="ui row">
+                <div class="ui horizontal center aligned segments" id="segment">
+                    <a class="ui segment" href="/#!/admin/all-users"> Users </a>
+                    <a class="ui segment" href="/#!/admin/all-events"> Events </a>
+                    <a class="ui segment" href="/#!/admin/all-games"> Games </a>
+                    <a class="ui segment" href="/#!/admin/all-sports"> Sports </a>
+                    <a class="ui segment" href="/#!/admin/all-sponsors"> Sponsors </a>
+                </div>
+            </div>
+            <!-- <div class="ui header">Users</div> -->
+            <div class="ui row">
+                <table class="ui center aligned table" id="user-table">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Username</th>
+                            <th>First name</th>
+                            <th>Last name</th>
+                            <th>College</th>
+                            <th>Contact number</th>
+                            <th>Email</th>
+                            <th>Weight (kg)</th>
+                            <th>Height (ft)</th>
+                            <th colspan="4">Commands </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat = "x in admin.allUsers">
+                            <td> {{x.user_id}}</td>
+                            <td> {{x.username}}</td>
+                            <td> {{x.firstname}}</td>
+                            <td> {{x.lastname}}</td>
+                            <td> {{x.college}}</td>
+                            <td> {{x.contactno}}</td>
+                            <td> {{x.email}}</td>
+                            <td> {{x.weight}}</td>
+                            <td> {{x.height}}</td>
+                            <td colspan="">
+                                <div class="ui animated button edit-trigger" ng-click="admin.openModal('edit-modal')">
+                                    <div class="visible content">Edit</div>
+                                    <div class="hidden content">  <i class="write icon"> </i></div>
+                                </div>
+                                <div class="ui modal" id="edit-modal">
+                                    <form class="ui form">
+                                        <h2 class="ui dividing header">UPDATE PASSWORD</h2>
+                                        <div class="fields">
+                                            <div class="field">
+                                                <label>Enter new password:</label>
+                                                <input type="text" id="password" ng-model = "admin.password">
+                                            </div>
+                                        </div>
+                                        <div class="ui button" id="cancel" ng-click="admin.closeModal('edit-modal')">Cancel</div>
+                                        <div class="ui button" ng-click="admin.updateUser(x.user_id)">Submit</div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </td>
+                        <td>
+                            <div class="ui animated button" id="delete" ng-click="admin.deleteUser(x.user_id)">
+                                <div class="visible content">Delete</div>
+                                <div class="hidden content"> <i class="trash icon"> </i> </div>
+                            </div>
+                            <div class="ui basic modal" id="delete-modal">
+                                <div class="ui icon header">
+                                    <i class="trash icon"></i>
+                                    DELETE
+                                </div>
+                                <div class="actions">
+                                    <div class="ui red basic cancel inverted button">
+                                        <i class="remove icon"></i>
+                                        No
+                                    </div>
+                                    <div class="ui green ok inverted button">
+                                        <i class="checkmark icon"></i>
+                                        Yes
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+
+                            <div class="ui animated button" id="delete" ng-show = "x.user_type == 'pending'"x ng-click="admin.approveUser(x.user_id)">
+                                <div class="visible content">Approve</div>
+                                <div class="hidden content"> <i class="add user icon"> </i> </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot class="full-width">
+                    <tr>
+                        <th colspan="100%">
+                            <div class="ui right floated small primary labeled icon button" id="add-user" ng-click="admin.openModal('add-modal')">
+                                <i class="user icon" ></i>
+                                Add User
+                            </div>
+                            <div class="ui modal" id="add-modal">
+                                <div class="header"> UPDATE USER</div>
+                                <div class="content">
+                                    <div class="ui form">
+                                        <div class="fields">
+                                            <div class="field">
+                                                <label>Username</label>
+                                                <input type="text" placeholder="{{admin.user.username}}" ng-model="username">
+                                            </div>
+                                            <div class="field">
+                                                <label>College</label>
+                                                <input type="text" placeholder="{{admin.user.college}}" ng-model="college">
+                                            </div>
+                                            <div class="field">
+                                                <label>Height</label>
+                                                <input type="text" placeholder="{{admin.user.height}}" ng-model="height">
+                                            </div>
+                                            <div class="field">
+                                                <label>Weight</label>
+                                                <input type="text" placeholder="{{admin.user.weight}}" ng-model="weight">
+                                            </div>
+                                        </div>
+                                        <div class="equal width fields">
+                                            <div class="field">
+                                                <label>First name</label>
+                                                <input type="text" placeholder="{{admin.user.firstname}}" ng-model="firstname">
+                                            </div>
+                                            <div class="field">
+                                                <label>Last name</label>
+                                                <input type="text" placeholder="{{admin.user.lastname}}" ng-model="lastname">
+                                            </div>
+                                        </div>
+                                        <div class="ui equal width form">
+                                            <div class="fields">
+                                                <div class="field">
+                                                    <label>E-mail</label>
+                                                    <input type="email" placeholder="{{admin.user.email}}" ng-model="email">
+                                                </div>
+                                                <div class="field">
+                                                    <label>Contact Number</label>
+                                                    <input type="text" placeholder="{{admin.user.contactno}}" ng-model="contactno">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="ui button" id="cancel" ng-click="admin.closeModal('add-modal')">Cancel</div>
+                                    <div class="ui button" ng-click="admin.addUser()">Submit</div>
+                                </div>
+                            </div>
+                        </th>
+                    </tr>
+
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

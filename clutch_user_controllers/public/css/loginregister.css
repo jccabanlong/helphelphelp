@@ -1,0 +1,29 @@
+body {
+	background-color: #cdcdcd;
+}
+#login-panel{
+	width: 300px;
+	padding: 20px;
+}
+
+#forms{
+	width: 700px;
+	padding: 10px;
+	position: absolute;
+	background-color: #466675;
+	right: 25%;
+	left: 25%;
+	top:10%;
+	border-radius: 20px;
+}
+
+#register-panel{
+	width: 350px;
+	padding: 20px;
+}
+
+#submitbutton{
+	background-color: #fac8c1;
+	
+}
+

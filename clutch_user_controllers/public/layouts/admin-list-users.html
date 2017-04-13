@@ -1,0 +1,48 @@
+<script type='text/javascript' src='js/user-profile.js'></script>
+<div id="main-wrapper" ng-controller = "adminController as admin">
+	<table class = "ui celled table">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Username</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat = "x in admin.allUsers">
+            <td ng-model="admin.currentUserId"> {{ x.user_id }}
+            </td>
+            <td> {{ x.username }}
+            	<div class="sub-header">{{ x.firstname + " " + x.lastname }}</div>
+                <div class="sub-header"> {{ x.user_type }}</div>
+            </td>
+            <td>
+            <button class="ui red button" ng-click="admin.openModal('edit-modal')">
+                Edit
+            </button>
+            <button class="ui red button" ng-click="admin.deleteUser(x.user_id)">
+                Delete
+            </button>
+            </td>
+
+        </tr>
+    </tbody>
+    </table>
+</div>
+
+     <div class="ui modal" id="edit-modal" ng-controller = "adminController as admin">
+                <div class="header"> UPDATE USER</div>
+                        <div class="content">
+                            <div class="ui form">
+                                <div class="fields">
+                                    <div class="field">
+                                        <label>{{admin.currentUserId}}</label>
+                                        <input type="text" placeholder="{{update.user.password}}" ng-model="password">
+                                    </div>
+                            </div>
+                            <br>
+                            <div class="ui button" id="cancel" ng-click="admin.closeModal('edit-modal')">Cancel</div>
+                            <div class="ui button" ng-click ="admin.updateUser(x.user_id)">Submit</div>
+                        </div>
+                    </div>
+                </div>

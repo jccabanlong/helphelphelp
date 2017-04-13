@@ -1,0 +1,68 @@
+<link rel='stylesheet' href='css-event.css'/>
+
+<div class="container" ng-controller = "eventController as event">
+	<div class="ui grid">
+		<div class="four wide column">
+			<div class="ui vertical pointing menu">
+				<div> <h1 style="text-align: center;" >Events</h1></div>
+					<a class="active item">Test 0</a>
+					<a class="item">Test 1</a>
+					<a class="item">Palarong UPLB</a>
+					<a class="item">CEMplangan</a>
+					<a class="item">{{event.currEvent.event_name}}</a>
+				</div>
+				</div>
+				<div class="eight wide stretched column">
+					<div class="ui segment">
+						<div> <h1 style="text-align: center;" >Sports</h1></div>
+							<div class="row">
+								<div class="column">
+								<div class="ui divider"></div>
+								<div class="ui three column grid">
+								<div class="column panel">
+									<div class="ui top attached segment" id="panelTitle">BasketBall</div>
+									<div class="ui bottom attached segment">Panel content</div>
+									<div class="ui top attached segment" id="panelTitle">Volleyball</div>
+									<div class="ui bottom attached segment">Panel content</div>
+									<div class="ui top attached segment" id="panelTitle">Bowling</div>
+									<div class="ui bottom attached segment">Panel content</div>
+								</div>
+									<div class="column panel">
+									<div class="ui top attached segment" id="panelTitle">Badminton</div>
+									<div class="ui bottom attached segment">Panel content</div>
+									<div class="ui top attached segment" id="panelTitle">Tennis</div>
+									<div class="ui bottom attached segment">Panel content</div>
+									<div class="ui top attached segment" id="panelTitle">Phil. Games</div>
+									<div class="ui bottom attached segment">Panel content</div>
+								</div>
+								<div class="column panel">
+									<div class="ui top attached segment" id="panelTitle">Swimming</div>
+									<div class="ui bottom attached segment">Panel content</div>
+									<div class="ui top attached segment" id="panelTitle">Soccer</div>
+									<div class="ui bottom attached segment">Panel content</div>
+									<div class="ui top attached segment" id="panelTitle">Board Games</div>
+									<div class="ui bottom attached segment">Panel content</div>
+								</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="four wide stretched column">
+					<div class="ui segment">
+						<div class="ui section">
+							<div class="section-title">
+								<h3>Today</h3>
+							<div class="ui card today-sched">
+							<h5>BASKETBALL GAME 2</h5>
+								<p>April 1, 2017</p>
+								<p>8AM to 3PM</p>
+								<p>Copeland Gymnasium</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>

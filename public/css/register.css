@@ -1,0 +1,22 @@
+.form-holder {
+    border-radius: 10px;
+    background-color: #e7eae1;
+}
+
+.form-head {
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 30px #000;
+    margin: 15px auto 30px auto;
+}
+  
+label{
+	text-align: left;
+	color: #fff;
+}
+
+#submitbutton{
+	background-color: #DE1B1B;
+	color: white;
+}

@@ -1,0 +1,65 @@
+<link rel='stylesheet' href='css/game-page.css'/>
+<h1> Bastketball Game 1</h1>
+<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. </p>
+
+<div class="ui two column middle aligned very relaxed stackable grid" id="game-wrapper">
+
+    <div class="column game-panel">
+        <div class="image">
+            <img class="ui huge rounded image" src="images/alaska.jpg">
+        </div>
+        <div class="content">
+            <br>
+            <h3 class="ui block header"> Alaska Aces </h3>
+            <div class="ui grid">
+                <div class="ten wide column">
+                    <div class="ui statistic">
+                        <div class="value">
+                            5,550
+                        </div>
+                        <div class="label">
+                            Points
+                        </div>
+                    </div>
+                </div>
+                <div class="six wide column">
+                    <a>
+                        <i class="star icon"></i>
+                        22 Bets
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="column game-panel">
+        <div class="image">
+            <img class="ui huge rounded image" src="images/meralco.jpg">
+        </div>
+        <div class="content">
+            <br>
+            <h3 class="ui block header"> Meralco Bolts </h3>
+            <div class="ui grid">
+                <div class="ten wide column">
+                    <div class="ui statistic">
+                        <div class="value">
+                            5,550
+                        </div>
+                        <div class="label">
+                            Points
+                        </div>
+                    </div>
+                </div>
+                <div class="six wide column">
+                    <a>
+                        <i class="star icon"></i>
+                        22 Bets
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

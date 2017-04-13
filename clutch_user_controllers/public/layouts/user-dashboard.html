@@ -1,0 +1,110 @@
+<link rel='stylesheet' href='css/dashboard.css'/>
+
+<div id="main-wrapper">
+    <div id="public-event" class="ui container">
+        <h3>Leaderboard</h3>
+        <canvas id="leadchart"></canvas>
+        <br><br>
+        <button id="feeds-trigger">Show Feeds</button>
+    </div>
+
+    <div id="feeds-panel">
+
+        <div
+        ng-controller="userController as dashboard"
+        class="ui two column grid container">
+
+        <div class="five wide column">
+
+            <!-- Event Details -->
+            <div id="event-panel" class="ui card">
+                <h1 id="event-name">Event Name</h1>
+                <p id="event-details">
+                    Event Details
+                </p>
+            </div>
+            <!-- Leaderboard -->
+            <div id="leaderboard" class="ui card">
+                <div class="section-title">
+                    <h3>Leaderboard</h3>
+                </div>
+
+                <table class="ui very basic collapsing celled table">
+                    <thead>
+                        <tr><th>Team</th>
+                            <th>Total Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="x in dashboard.teamGames">
+                            <td>
+                                <h4 class="ui image header">
+                                    <img src="images/tnt.jpg" class="ui mini rounded image">
+                                    <div class="content">
+                                        {{x.team_name}}
+                                        <div class="sub header">Lorem Ipsum</div>
+                                    </div>
+                                </h4>
+                            </td>
+                            <td>
+                                {{x.score}}
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+        <div class="eleven wide column" id="right-panel">
+
+            <!-- Membership Requests -->
+            <div class="ui section" id="membership-request-panel">
+                <div class="ui card member-request">
+                    <div class="request-text">
+                        Angelo Guiam has requested to join Palarong UPLB
+                    </div>
+                    <div class="request-approve two wide column">
+                        <button type="button" name="button" class="membership-command">X</button>
+                    </div>
+                    <div class="request-decline two wide column">
+                        <button type="button" name="button" class="membership-command">/</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="ui section">
+                <div class="section-title">
+                    <h3>Current Games</h3>
+                    <br>
+                    <div ng-repeat="game in dashboard.currentGames" class="ui card-panel">
+                        <h5>{{game.sport_name + " Game " + game.game_id }}</h5>
+                        <p>{{game.Date}}</p>
+                        <p>{{game.venue_name}}</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="ui section">
+                <div class="section-title" >
+                    <h3>Upcoming Games</h3>
+                    <br>
+                    <div ng-repeat="up in dashboard.upcomingGames" class="ui card-panel">
+                        <h5>{{up.Date}}</h5>
+                        <p>{{up.sport_name + " Game " +up.game_id}}</p>
+                        <p>{{up.venue_name}}</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+<script type='text/javascript' src='js/dashboard.js'></script>

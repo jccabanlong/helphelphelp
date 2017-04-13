@@ -1,0 +1,89 @@
+<link rel='stylesheet' href='css/register.css'/>
+<script type='text/javascript' src='js/register.js'></script>
+
+<link rel='stylesheet' href='css/nav-hack.css'/>
+<script type='text/javascript' src='js/nav-hack.js'></script>
+
+<div id="main-wrapper">
+<div class="ui container">
+	<div class="ui one column center aligned grid" id="forms">
+		<div class="column eight wide form-holder" id="register-panel">
+				<h2 class="center aligned header form-head">Create an account here!</h2>
+				<form class="ui medium form" ng-controller="userController as signUp">
+					<div class="field">
+						<label> Username </label>
+						<input id="username" type="text" placeholder="Username" ng-model="signUp.newUser.username">
+					</div>
+					<div class="field">
+						<label>Password</label>
+						<input type="password" id="password" placeholder="Password" ng-model="signUp.newUser.password">
+					</div>
+					<div class="two fields">
+						<div class="field">
+							<label>First Name</label>
+							<input type="text" id="firstname" placeholder="First Name" ng-model="signUp.newUser.firstname">
+						</div>
+						<div class="field">
+							<label>Last Name</label>
+							<input type="text" id="lastname" placeholder="Last Name " ng-model="signUp.newUser.lastname">
+						</div>
+					</div>
+				<div class="two fields">
+					<div class="field">
+						<label>Gender</label>
+						<select class="ui dropdown" name="gender">
+							<option value="" id="lastname" >Gender</option>
+							<option value="1">Male</option>
+							<option value="0">Female</option>
+						</select>
+					</div>
+					<div class="field">
+						<label>User Type</label>
+						<select class="ui dropdown" name="usertype">
+							<option value="">User Type</option>
+							<option value="1">Admin</option>
+							<option value="0">Normal</option>
+						</select>
+					</div>
+				</div>
+				<div class="three fields">
+					<div class="field">
+						<label>Height (ft)</label>
+						<input type="text" name="height" placeholder="Height (ft)">
+					</div>
+					<div class="field">
+						<label>Weight (Kg)</label>
+						<input type="text" name="weight" placeholder="Weight (Kg)">
+					</div>
+
+					<div class="field">
+						<label>College</label>
+						<input type="text" name="college" placeholder="College">
+					</div>
+				</div>
+				<div class="two fields">
+					<div class="field">
+						<label>Age</label>
+						<input type="integer" name="age" placeholder="Age">
+					</div>
+					<div class="field">
+						<label>Contact No.</label>
+						<input type="integer" name="contactno" placeholder="Contact No.">
+					</div>
+				</div>
+				<div class="field">
+					<label>Email Address</label>
+					<input type="email" id="email" placeholder="Email Address" ng-model="signUp.newUser.email">
+				</div>
+				<div class="field">
+					<button class="ui fluid submit button" id="submitbutton" ng-click="signUp.registerUser()">SIGN UP</button>
+				</div>
+				<div class="ui error message"></div>
+				<div class="ui message">
+					Already have an account? <a href="login.html">Log in here</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+</div>

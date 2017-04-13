@@ -1,0 +1,154 @@
+<link rel="stylesheet" href="css/admin.css"></link>
+<link rel="stylesheet" type="text/css" href="css/admin_homepage.css"> </link>
+<script type='text/javascript' src='js/admin.js'></script>
+
+<div class="ui container" id="main-wrapper" >
+<div class="ui card" id="main_card">
+<div class="content"> 
+    <div class="ui row">
+            <div class="ui horizontal center aligned segments" id="segment">
+                <a class="ui segment" href="/#!/admin/all-users"> Users </a>
+                <a class="ui segment" href="/#!/admin/all-events"> Events </a>
+                <a class="ui segment" href="/#!/admin/all-games"> Games </a>
+                <a class="ui segment" href="/#!/admin/all-sports"> Sports </a>
+                <a class="ui segment" href="/#!/admin/all-sponsors"> Sponsors </a>
+            </div>
+            </div>
+<div class="ui row">
+    <table class="ui center aligned table">
+        <thead>
+            <tr>
+                <th>Game ID</th>
+                <th>Sport ID</th>
+                <th>Venue ID</th>
+                <th>Event ID</th>
+                <th>Date Start</th>
+                <th>Time Start</th>
+                <th>Referee </th>
+                <th>Winner Team ID </th>
+                <th>Duration</th>
+                <th colspan="4"> Commands </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> 1</td>
+                <td> 1</td>
+                <td> 1</td>
+                <td> 1</td>
+                <td> 04-07-2017</td>
+                <td> 3:00 pm</td>
+                <td> Referee Name</td>
+                <td> 1</td>
+                <td>5 hours</td>
+                <td>
+                    <div class="ui animated button edit-trigger">
+                        <div class="visible content"><i class="edit icon"> </i></div>
+                        <div class="hidden content"> Edit </div>
+                    </div>
+                    <div class="ui modal" id="edit-modal">
+                            <div class="header"> UPDATE GAME</div>
+                                <div class="content">
+                                    <div class="ui form">
+                                       <div class="fields">
+                                            <div class="field">
+                                                <label> Date Start </label>
+                                                <div class="ui calendar" id="start-date-pick">
+                                                    <div class="ui input left icon">
+                                                        <i class="calendar icon"></i>
+                                                        <input type="text" placeholder="Date" name="date_start" ng-model="game.dateStart">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <label> Time Start </label>
+                                                <div class="ui input left icon">
+                                                    <i class="wait icon"></i>
+                                                    <input type="text" placeholder="Time" name="time_start" ng-model="game.timeStart">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <label> Referee </label>
+                                            <input type="text">
+                                        </div>
+                                    <br>
+                                    <div class="ui button" id="cancel">Cancel</div>
+                                    <div class="ui button">Submit</div>
+                                    </div>
+                                </div>
+                </td>
+                <td>
+                    <div class="ui animated button delete-trigger">
+                        <div class="visible content"><i class="trash icon"> </i></div>
+                        <div class="hidden content"> Delete </div>
+                    </div>
+                    <div class="ui basic modal" id="delete-modal">
+                            <div class="ui icon header">
+                                <i class="trash icon"></i>
+                                DELETE
+                            </div>
+                              <div class="actions">
+                                <div class="ui red basic cancel inverted button">
+                                  <i class="remove icon"></i>
+                                  No
+                                </div>
+                                <div class="ui green ok inverted button">
+                                  <i class="checkmark icon"></i>
+                                  Yes
+                                </div>
+                              </div>
+                    </div>
+                </td>
+
+            </tr>
+
+        </tbody>
+        <tfoot class="full-width">
+            <tr>
+                <th colspan="100%">
+                    <div class="ui right floated small primary labeled icon button add-trigger">
+                        <i class="add square icon"></i> Add Game
+                    </div>
+                    <div class="ui modal" id="add-modal">
+                        <div class="header">ADD GAME</div>
+                        <div class="content">
+                                    <div class="ui form">
+                                       <div class="fields">
+                                            <div class="field">
+                                                <label> Date Start </label>
+                                                <div class="ui calendar" id="start-date-pick">
+                                                    <div class="ui input left icon">
+                                                        <i class="calendar icon"></i>
+                                                        <input type="text" placeholder="Date" name="date_start" ng-model="game.dateStart">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <label> Time Start </label>
+                                                <div class="ui input left icon">
+                                                    <i class="wait icon"></i>
+                                                    <input type="text" placeholder="Time" name="time_start" ng-model="game.timeStart">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <label> Referee </label>
+                                            <input type="text">
+                                        </div>
+                                    <br>
+                                    <div class="ui button" id="cancel">Cancel</div>
+                                    <div class="ui button">Submit</div>
+                                    </div>
+                                </div>
+                    </div>
+                </th>
+            </tr>
+
+        </tfoot>
+    </table>
+    </div>
+
+</div>
+</div>
+</div>

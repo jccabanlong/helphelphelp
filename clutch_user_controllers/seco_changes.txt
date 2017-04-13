@@ -1,0 +1,31 @@
+<<<<<<< HEAD
+CHANGES:
+
+	added email variable to user.service, malicsidb_final.sql procedure files
+
+	changed password size from 50 to 72
+
+	added age, gender, location in malicsidb_final.sql users attributes
+
+	controller for updating, creating users
+
+PROBLEMS ENCOUNTERED:
+
+login.html - needs to restrict user to fill up everything in sign-up and login
+
+the new routing affects user authentication
+
+modal of updating user profile: widen the form and make the dropdown chosen visible
+
+no pages/buttons for user interests
+
+still not producing winner logs
+=======
+Seco changes:
+
+added email variable to user.service, malicsidb_final.sql procedure files
+
+
+some errors in registering user- password and normality of users are not stored properly in DB
+	action: back to simple insertion and login
+>>>>>>> 7543b5786efb4d4173894087fbb83cfe41b06f1d

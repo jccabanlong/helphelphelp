@@ -1,0 +1,59 @@
+<link rel='stylesheet' href='css/event.css'/>
+<br><br><br><br>
+<div class="ui container">
+	<div ng-controller="userEventController as UEC">
+		<table id="sports" class="ui celled table">
+			<tr> <th> <h1> List of Sports </h1></th></tr>
+
+			<tbody>
+				<tr ng-repeat="x in UEC.allSports" ng-init="a=x.sport_id"> 
+					<td ng-click="showGame[$index]=!showGame[$index]">
+					{{x.sport_name}} 
+						<div>
+							<table class="ui single line table" ng-show="showGame[$index]">
+								<thead>
+				                    <tr>
+				                    	<th> Game ID </th>
+				                        <th> Date </th>
+				                        <th> Time </th>
+				                        <th> Venue </th>
+				                    </tr>
+				                </thead>
+				                <tbody ng-init="UEC.viewGamesByEvent(x)">
+				                    <tr ng-repeat="y in UEC.allGames[a-1]" ng-click="UEC.viewGame(y.game_id)">
+				                        <td id="game"> {{y.game_id}} </tdQQQQ>	
+				                        <td id="date"> {{y.date_start}} </td>
+				                        <td id="time"> {{y.time_start}} </td>
+				                        <td id="venue"> {{y.venue_name}} </td>
+				                    </tr>
+				                </tbody>
+				            </table>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<div ng-controller="sportController as sport">
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>ADD SPORT<br>
+		        Sport Name: <input type="text" ng-model="sport.addSportName"><br>
+		        <button ng-click="sport.addSport()">ADD</button>
+		</div>
+
+		<div ng-controller="gameController as game" ng-init="b=UEC.event_id">
+		        <br>ADD GAME<br>
+		        Sport: <input type="text" ng-model="game.addSportId"><br>
+		        Venue: <input type="text" ng-model="game.addVenueId"><br>
+		        Date: <input type="text" ng-model="game.addDate"><br>
+		        Time: <input type="text" ng-model="game.addTime"><br>
+		        Duration: <input type="number" ng-model="game.addDuration"><br>
+		        Referee: <input type="text" ng-model="game.addReferee"><br>
+		        <button ng-click="game.addGame(b)">ADD</button><br>
+		</div>
+
+		<br><br>
+		<button ng-click="UEC.scoreboard()">SCOREBOARD</button>
+	</div>
+</div>
+

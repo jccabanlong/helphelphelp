@@ -1,0 +1,33 @@
+div {
+    /*border: solid 1px red;*/
+}
+
+body {
+    background-image: url('../images/patterns/3.png ');
+}
+
+.ui .card {
+    padding: 20px;
+}
+
+#page-navigation {
+    background: #DE1B1B;
+    height: 65px !important;
+}
+
+#main-wrapper {
+    padding-top: 20px;
+    min-height: calc(100vh - 65px);
+    margin-top: 65px;
+}
+
+#page-footer {
+    height: 65px;
+    margin: 0;
+    background-color: #DEDEDE;
+    border-bottom: solid 3px #DE1B1B !important;
+}
+
+#page-footer a {
+    color: #DE1B1B;
+}

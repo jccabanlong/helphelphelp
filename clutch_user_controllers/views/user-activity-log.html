@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html ng-app = "mainApp">
+<head>
+    <title> MalICSi </title>
+    <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+    <link rel='stylesheet prefetch' href='semantic/components/icon.min.css'>
+    <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+</head>
+
+<body>
+    <link rel='stylesheet' href='css/activity-log.css'/>
+
+<div class="ui grid">
+    <div class="four wide column">
+        <div class="ui vertical menu">
+            <a class="active item">
+                Today
+                <div class="ui left pointing label" id="today-log-label">1</div>
+            </a>
+            <a class="item">
+                All Logs
+            </a>
+            <div class="item">
+                <div class="ui transparent icon input">
+                    <input type="text" placeholder="Search logs...">
+                    <i class="search icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="twelve wide column" ng-controller = "adminController as admin">
+        <h2>Activity Log</h2>
+
+        <div class="ui feed vertical segment">
+            <div class="event">
+                <div class="label">
+                    <img src="images/id.jpg">
+                </div>
+                <div class="content">
+                    <div class="date">
+                        3 days ago
+                    </div>
+                    <div class="summary" ng-repeat = "x in admin.allLogs">
+                        {{x.firstname + ": " + " " + x.message}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui feed vertical segment">
+            <div class="event">
+                <div class="label">
+                    <img src="images/id.jpg">
+                </div>
+                <div class="content">
+                    <div class="date">
+                        3 days ago
+                    </div>
+                    <div class="summary">
+                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.                                 </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui feed vertical segment">
+                <div class="event">
+                    <div class="label">
+                        <img src="images/id.jpg">
+                    </div>
+                    <div class="content" ng-controller = "adminController as user">
+                        <div class="date">
+                            3 days ago
+                        </div>
+                        <div class="summary" >
+                           {{user.username}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui feed vertical segment">
+                <div class="event">
+                    <div class="label">
+                        <img src="images/id.jpg">
+                    </div>
+                    <div class="content">
+                        <div class="date">
+                            3 days ago
+                        </div>
+                        <div class="summary">
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+    <script src="jquery-3.1.1.js"></script>
+    <script src="semantic/semantic.js"></script>
+    <script src="semantic/semantic.min.js"></script>
+    <script src="angular.js"></script>
+    <script src="app.module.js"></script>
+    <script src="angular-route.js"></script>
+    <script src="admin.controller.js"></script>
+</body>
+</html>

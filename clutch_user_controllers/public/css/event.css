@@ -1,0 +1,29 @@
+body {
+	background-color: #cdcdcd;
+}
+
+th{
+	background-color: #6a8e9e;
+	padding: 10px;
+}
+
+#sports{
+	border-radius: 20px;
+	width: 25%;
+	position: absolute;
+	left: 50px;
+}
+#teams{
+	border-radius: 20px;
+	width: 20%;
+	position: absolute;
+	left: 450px;
+	right: 70px;
+}
+#events{
+	border-radius: 20px;
+	width: 40%;
+	position: absolute;
+	right:30px;
+}
+tr:hover {background-color: #fac8c1}

@@ -1,0 +1,13 @@
+.ui.table {
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+.ui.animated.button,#edit {
+	background-color: #de1b1b;
+	color: white;
+}

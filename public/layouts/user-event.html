@@ -1,0 +1,62 @@
+<link rel='stylesheet' href='css/user-view-event.css'/>
+
+<div id="main-wrapper" ng-controller = "eventController as event">
+
+	<div class="ui grid container">
+		<div class="four wide column" ng-init = "event.viewClickedEvent()">
+			<div class="ui card" ng-repeat = "x in event.allEvents">
+				<h2>{{x.event_name}}</h2>
+				Start Date:{{x.date_start}}<br>
+				End Date:{{x.date_end}}<br>
+				<div id="command-panel">
+					<button class="command-btn"><i class="write icon"></i></button>
+					<button class="command-btn"><i class="delete icon"></i></button>
+				</div>
+			</div>
+			<div class="ui card">
+				<button class="ui button" id="join-button">Join</button>
+			</div>
+		</div>
+
+		<div class="twelve wide column">
+			<div class="event-section">
+				<h1>Sports</h1>
+				<div class="ui divider"></div>
+				Content.
+			</div>
+
+			<div class="event-section" ng-controller="teamController as team">
+				<h1>Team</h1>
+
+				<div class="ui form">
+					<div class="field">
+						<label>Team name</label>
+						<input type="text" ng-model = "team.teamName" name="team_name">
+					</div>
+					<button class="ui button team" ng-click = "team.addTeam(event.eventId)">Submit</button>
+				</div>
+
+				<br>
+				<!-- <div class="ui divider"></div> -->
+
+				<div
+					 ng-init = "team.viewTeamPerEvent()">
+					<div class="ui card" ng-repeat="x in team.allTeams">
+						{{x.team_name}}
+						<button class = "ui teal button" ng-click="team.viewTeam(x.team_id)">{{x.team_name}}</button>
+						<button class = "ui red button" ng-click = "team.deleteTeam(x.team_id)">Delete</button>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="event-section">
+				<h1>Sponsors</h1>
+				<div class="ui divider"></div>
+				Content.
+			</div>
+
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,39 @@
+
+
+<div class = "ui container" ng-controller = "teamController as team">
+<div class="ui special cards" ng-init = "team.viewClickedTeam()">
+  <div class="card" ng-repeat = "x in team.allTeams">
+    <div class="blurring dimmable image">
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <div class="ui inverted button">Add Friend</div>
+          </div>
+        </div>
+      </div>
+      <img src="../images/teamteam.jpg">
+    </div>
+    <div class="content">
+      <a class="header">{{x.team_name}}</a>
+      <div class="meta">
+        <span class="date">{{x.team_id}}</span>
+        <a><i class="write icon"></i></a>
+        <a ng-click = "team.deleteTeam(x.team_id)"><i class="trash outline icon"></i></a>
+      </div>
+    </div>
+    <div class="extra content">
+      <a>
+        <i class="users icon"></i>
+        2 Members
+      </a>
+    </div>
+  </div>
+  </div>
+  <form class="ui form">
+  <div class="field">
+    <label>Team Name</label>
+    <input name="team-name" ng-model = "team.teamName" placeholder="Phoenix Suns" type="text" required>
+  </div>
+  <button class="ui button" ng-click = "team.updateTeam(x.team_id)" type="submit">Submit</button>
+</form>
+  </div>

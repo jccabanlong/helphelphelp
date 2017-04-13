@@ -1,0 +1,35 @@
+body {
+    margin: 0 !important;
+}
+
+#main-wrapper {
+    margin: 0 !important;
+    min-height: calc(100vh - 65px) !important;
+}
+
+.form-holder {
+    margin-top: 5%;
+    border-radius: 10px;
+    background-color:  #e7eae1;
+}
+
+.form-head {
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 30px #000;
+  margin: 15px auto 30px auto;
+}
+
+label{
+	text-align: left;
+}
+
+#loginbutton{
+	background-color: #DE1B1B;
+	color: white;
+}
+
+#register-div {
+    display: none;
+}

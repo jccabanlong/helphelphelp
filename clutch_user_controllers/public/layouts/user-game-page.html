@@ -1,0 +1,72 @@
+<link rel='stylesheet' href='css/game-page.css'/>
+
+<br><br><br><br>
+
+<div ng-controller="gameController as game" ng-init="game.viewGame();game.canBet()">
+    <h1> {{game.game.sport_name}} Game {{game.game.game_id}}</h1>
+    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. </p>
+
+    <div class="ui two column middle aligned very relaxed stackable grid" id="game-wrapper">
+        <div class="column game-panel">
+            <div class="image">
+                <img class="ui huge rounded image" src="images/star.jpg">
+            </div>
+            <div class="content">
+                <br>
+                <h3 class="ui block header"> {{game.game.team_name}} </h3>
+                <div class="ui grid">
+                    <div class="ten wide column">
+                        <div class="ui statistic">
+                            <div class="value">
+                                {{game.score}}
+                            </div>
+                            <div class="label">
+                                Points
+                            </div>
+                        </div>
+                    </div>
+                    <div class="six wide column">
+                        <a>
+                            <i class="star icon"></i>
+                            {{game.game.bet_count}} Bets
+                        </a>
+                        <button ng-click="game.bet(game.game.game_id,game.game.team_id);game.userCanbet=false;game.viewGame()" ng-show="game.userCanbet">PLACE BET</button>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="column game-panel">
+            <div class="image">
+                <img class="ui huge rounded image" src="images/star.jpg">
+            </div>
+            <div class="content">
+                <br>
+                <h3 class="ui block header"> {{game.game.team_name_2}} </h3>
+                <div class="ui grid">
+                    <div class="ten wide column">
+                        <div class="ui statistic">
+                            <div class="value">
+                                {{game.score2}}
+                            </div>
+                            <div class="label">
+                                Points
+                            </div>
+                        </div>
+                    </div>
+                    <div class="six wide column">
+                        <a>
+                            <i class="star icon"></i>
+                            {{game.game.bet_count_2}} Bets
+                        </a>
+                        <button ng-click="game.bet(game.game.game_id,game.game.team_id_2);game.userCanbet=false;game.viewGame()" ng-show="game.userCanbet">PLACE BET</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

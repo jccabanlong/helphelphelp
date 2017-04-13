@@ -1,0 +1,76 @@
+<link rel='stylesheet' href='css/event.css'/>
+
+<div class="ui container">
+
+
+	<div  ng-controller = "eventController as event">
+		<table id="events" class="ui celled table">
+			<tr>
+				
+				<th> Event </th>
+				<th> Date Start </th>
+				<th> Date End </th>
+				<th> Open for registration? </th>
+				<th> Options </th>
+				<th> Options </th>
+			</tr>
+
+			<tbody ng-init = "event.viewClickedEvent()">
+				<tr ng-repeat = "x in event.allEvents">
+					
+					<td>
+					<button class = "ui button teal" >{{x.event_name}}</button>
+					</td>
+					<td>{{x.date_start}}</td>
+					<td>{{x.date_end}}</td>
+					<td>{{x.allow_reg == '1' ? 'Yes' : 'No'}}</td>
+					
+					<td>
+					<button class = "ui button green" ng-click = "event.updateEvent()">Update</button>
+					</td>
+					<td>
+					<button class = "ui button red" ng-click = "event.deleteEvent(x.event_id)">Delete</button>
+					</td>
+					
+					
+				</tr>
+				
+
+			</tbody>
+
+	         <div class="ui form" ng-controller = "teamController as team">
+                <div class="field">
+                  	<label>Team name</label>
+                    <input type="text" ng-model = "team.teamName" name="team_name">
+                 </div>
+                    <button class="ui button team" ng-click = "team.addTeam(event.eventId)">Submit</button>
+             </div>
+
+		</table>
+		 <div class="ui form" ng-repeat = "x in event.allEvents" >
+                      <div class="fields">
+                        <div class="field">
+                          <label>Event name</label>
+                          <input type="text" ng-model = "event.eventName" ng-init = "event.eventName = x.event_name" name="event_name">
+                        </div>
+                </div>
+                <div class="fields">
+                        <div class="field">
+                          <label>Date Start</label>
+                          <input type="text" ng-model = "event.dateStart" ng-init = "event.dateStart = x.date_start" name="event_name">
+                        </div>
+                </div>
+                <div class="fields"> 
+                        <div class="field">
+                          <label>Date End</label>
+                          <input type="text" ng-model = "event.dateEnd" ng-init = "event.dateEnd = x.date_end" name="event_name">
+                        </div>       
+                </div>
+                <div class="fields">
+                    <div class="field">
+                       <label>Open for registration?</label>
+                        <input type="text" ng-model = "event.allowReg" ng-init = "event.allowReg = x.allow_reg" name="event_name">
+                    </div>       
+                </div>
+	</div>
+</div>

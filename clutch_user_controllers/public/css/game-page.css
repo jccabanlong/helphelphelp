@@ -1,0 +1,21 @@
+div {
+    /*border: solid 1px red;*/
+}
+
+.game-panel img {
+    width: 100%;
+}
+
+.divider p {
+    height: 50px;
+    width: 50px;
+    background: black;
+    line-height: 50px;
+    color: white;
+    z-index: 1000;
+    border-radius: 100%;
+}
+
+#game-wrapper {
+    margin-bottom: 20px;
+}

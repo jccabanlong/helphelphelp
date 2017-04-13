@@ -1,0 +1,30 @@
+
+
+<div class = "ui container" ng-controller = "teamController as team">
+<div class="ui special cards" ng-init = "team.viewAllTeam()">
+  <div class="card" ng-repeat = "x in team.allTeams">
+    <div class="blurring dimmable image">
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <div class="ui inverted button">Add Friend</div>
+          </div>
+        </div>
+      </div>
+      <img src="../images/teamteam.jpg">
+    </div>
+    <div class="content">
+      <a class="header" ng-click = "team.viewTeam(x.team_id)">{{x.team_name}}</a>
+      <div class="meta">
+        <span class="date">{{x.team_id}}</span>
+      </div>
+    </div>
+    <div class="extra content">
+      <a>
+        <i class="users icon"></i>
+        2 Members
+      </a>
+    </div>
+  </div>
+  </div>
+  </div>

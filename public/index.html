@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app = "malicsi">
+<head>
+    <title>128 Template</title>
+    <link rel='stylesheet prefetch' href='css/components/icon.min.css'>
+    <link rel='stylesheet' href='css/semantic.min.css'/>
+    <link rel='stylesheet' href='css/defaults.css'/>
+</head>
+
+<body ng-controller="loggedUserController as logged">
+    <div id="overlay"></div>
+
+    <!-- NAVIGATION SECTION -->
+    <div class="ui fixed inverted menu" id="page-navigation">
+        <div class="ui container">
+            <a href="/#!/user/home" class="header item">
+                <img class="logo" src="images/malicsi.png">
+                &nbsp;&nbsp;MALICSI
+            </a>
+            <a href="/#!/user/home" class="item">Home</a>
+            <a href="/#!/user/events" class="item">Events</a>
+
+            <div class="alight right ui simple dropdown item" ng-controller= "userController as user">
+                {{user.user.firstname + " " + user.user.lastname}} <i class="dropdown icon"></i>
+                <div class="menu">
+                    <a class="item" href="#!/user/profile">Profile</a>
+                    <a class="item" href="/#!/user/activity-log">Activity Log</a>
+                    <a class="item" href="#" ng-click="user.logOut()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="overlay"></div>
+
+<!-- CONTENT SECTION -->
+<div ng-view></div>
+
+
+<!-- FOOTER SECTION -->
+<!-- <div class="ui inverted vertical footer segment" id="page-footer">
+<div class="ui center aligned container">
+<div class="ui horizontal inverted small divided link list">
+<a class="item" href="#">Site Map</a>
+<a class="item" href="#">Contact Us</a>
+<a class="item" href="#">Terms and Conditions</a>
+<a class="item" href="#">Privacy Policy</a>
+</div>
+</div>
+</div> -->
+</body>
+
+<script type='text/javascript' src='js/jquery-3.1.1.min.js'></script>
+<script type='text/javascript' src='js/semantic.min.js'></script>
+<script type='text/javascript' src='js/defaults.js'></script>
+<script src="chart.js/dist/Chart.bundle.js"></script>
+<script src="chart.js/samples/utils.js"></script>
+
+<!-- pull angular js -->
+<script type='text/javascript' src='angular/angular.js'></script>
+<script type='text/javascript' src='angular-route/angular-route.js'></script>
+
+<!-- import angular router -->
+<script type="text/javascript" src="app.module.js"></script>
+<script type="text/javascript" src="router.js"></script>
+<link rel="stylesheet" href="toastr.css" />
+<script src="toastr.js"></script>
+<script src = "admin.controller.js"></script>
+<script src = "activity-log.controller.js"></script>
+<script src = "dashboard.controller.js"></script>
+<script src="event.controller.js"></script>
+<script src="sponsor.controller.js"></script>
+<script src="logged.user.controller.js"></script>
+<script src="team.controller.js"></script>
+<script src="user.controller.js"></script>
+<script src="profile.controller.js"></script>
+<script src="user-game-sched.controller.js"></script>
+<script src="user-event.controller.js"></script>
+<script src="game.controller.js"></script>
+<script src="sport.controller.js"></script>
+
+</html>
