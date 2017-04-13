@@ -167,9 +167,19 @@ exports.viewLogs=(req,res)=>{
 	});	
 }
 exports.viewAllLogs=(req,res)=>{
-	const query_string = 'SELECT DATE_FORMAT(log_timestamp,"%b %e %Y %r") Date, timestampdiff(minute,log_timestamp,now())Minutes, timestampdiff(hour,log_timestamp,now())Hour,(now()) Time,message from logs ';
+	const query_string = 'SELECT 
+		DATE_FORMAT(log_timestamp,"%b %e %Y %r") Date, 
+		timestampdiff(hour,log_timestamp,now()) Hour,
+		timestampdiff(minute,log_timestamp,now()) Minutes, 
+		timestampdiff(second,log_timestamp,now()) Seconds,
+		(now()) Time,
+		message 
+
+		from logs 
+		order by log_timestamp, message desc';
 	connection.query(query_string, null, (err,result) =>{
 		if(!err){
+			
 			res.status(200).send(result);
 			console.log(result);
 		}
